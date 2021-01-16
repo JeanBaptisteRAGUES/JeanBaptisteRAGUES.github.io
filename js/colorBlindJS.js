@@ -171,8 +171,11 @@ function dessiner(img) {
   */
   form.addEventListener('change', swtichModeDefault);
   canevas.addEventListener('mousedown', allowDrawing);
+  canevas.addEventListener('touchstart', allowDrawing);
   canevas.addEventListener('mousemove', switchMode);
+  canevas.addEventListener('touchmove', switchMode);
   canevas.addEventListener('mouseup', disableDrawing);
+  canevas.addEventListener('touchend', disableDrawing);
   
   for(let i = 0; i < small.length; ++i){
     small[i].addEventListener('click', changeImage);
