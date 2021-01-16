@@ -73,8 +73,8 @@ function dessiner(img) {
   };
 
   var changeImage = function(evt){
-    //var imgSRC = "../images/" + evt.currentTarget.id + ".jpg";
-    var imgSRC = "../images/bonjour" + ".jpg";
+    var imgSRC = "../images/" + evt.currentTarget.id + ".jpg";
+    //var imgSRC = "../images/bonjour" + ".jpg";
     console.log("image source : " + imgSRC);
     img.src = imgSRC;
     switchMode();
