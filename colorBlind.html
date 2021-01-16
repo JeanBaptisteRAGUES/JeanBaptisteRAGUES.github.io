@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body>
+        <div class="imagePlusParametres">
+            <div class="parametres">
+                <form id="daltoForm">
+                    <h2>Choisissez un type de daltonisme :</h2>
+                    <input type="radio" name="daltoType" id="daltoType_protanomal" value="1" checked>
+                    <label for="daltoType_protanomal">Protanomal</label>
+                    <br>
+                    <input type="radio" name="daltoType" id="daltoType_deuteranomal" value="1">
+                    <label for="daltoType_deuteranomal">Deuteranomal</label>
+                    <br>
+                    <input type="radio" name="daltoType" id="daltoType_tritanomal" value="1">
+                    <label for="daltoType_tritanomal">Triatanomal</label>
+                    <br>
+                    <input type="radio" name="daltoType" id="daltoType_protanopie" value="0">
+                    <label for="daltoType_protanopie">Protanopie</label>
+                    <br>
+                    <input type="radio" name="daltoType" id="daltoType_deuteranopie" value="0">
+                    <label for="daltoType_deuteranopie">Deuteranopie</label>
+                    <br>
+                    <input type="radio" name="daltoType" id="daltoType_tritanopie" value="0">
+                    <label for="daltoType_tritanopie">Tritanopie</label>
+                    <br>
+                    <input type="radio" name="daltoType" id="daltoType_achromatopsie" value="0">
+                    <label for="daltoType_achromatopsie">Achromatopsie</label>
+                    <br>
+                    <input type="radio" name="daltoType" id="daltoType_aucun" value="0">
+                    <label for="daltoType_aucun">Aucun</label>
+                    <br><br>
+                </form>
+                <div class="slidecontainer">
+                    <p>Degré de sévérité :</p>
+                    <input type="range" min="0" max="100" value="50" class="slider" id="severite">
+                </div>
+            </div>
+            <div class="image">
+                <div class="monCanvas">
+                    <canvas id="canvas"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="miniatures">
+            <img src="./images/SpectreCouleurs_small.jpg" alt="" id="SpectreCouleurs" class="small">
+            <img src="./images/paysage_small.JPG" alt="" id="paysage" class="small">
+            <img src="./images/test01_small.JPG" alt="" id="test01" class="small round">
+            <img src="./images/test02_small.JPG" alt="" id="test02" class="small round">
+            <img src="./images/test03_small.JPG" alt="" id="test03" class="small round">
+            <img src="./images/test04_small.JPG" alt="" id="test04" class="small round">
+            <img src="./images/test05_small.JPG" alt="" id="test05" class="small round">
+            <img src="./images/test06_small.JPG" alt="" id="test06" class="small round">
+            <img src="./images/test07_small.JPG" alt="" id="test07" class="small round">
+            <img src="./images/test08_small.JPG" alt="" id="test08" class="small round">
+            <img src="./images/test09_small.JPG" alt="" id="test09" class="small round">
+            <img src="./images/test10_small.JPG" alt="" id="test10" class="small round">
+            <img src="./images/test11_small.JPG" alt="" id="test11" class="small round">
+        </div>
+        
+        <script src="./js/colorBlindJS.js" async defer></script>
+    </body>
+</html>

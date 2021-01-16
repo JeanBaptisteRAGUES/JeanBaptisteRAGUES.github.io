@@ -1,0 +1,47 @@
+@import './flexBasics';
+
+$theme-color : rgb(171, 253, 253);
+
+body{
+    background-color: $theme-color;
+}
+
+.miniatures{
+    @extend %default-flex;
+    .small{
+        margin: 20px;
+        cursor: pointer;
+        transform: scale(1);
+        transition-property: transform;
+        transition-duration: 300ms;
+        &:hover{
+            transform: scale(1.15);
+        }
+    }
+}
+
+.parametres{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-right: 100px;
+}
+
+
+.image{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagePlusParametres{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: left;
+    margin-bottom: 50px;
+}
+
+.round{
+    border-radius: 100px;
+}
