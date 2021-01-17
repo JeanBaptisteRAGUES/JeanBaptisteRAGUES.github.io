@@ -76,21 +76,34 @@ function dessiner(img) {
     var imgSRC = "../images/" + evt.currentTarget.id + ".jpg";
     console.log("image source : " + imgSRC);
     img.src = imgSRC;
-    switchMode();
+    switchModeMouse();
   }
 
-  var calculateSeparationX = function(evt = null){
+  var calculateSeparationX = function(mode, evt = null){
     if(evt != null){
-      return evt.clientX-canevas.getBoundingClientRect().left;
+      if(mode == 0){
+        return evt.clientX-canevas.getBoundingClientRect().left;
+      }else{
+        return evt.touches[0].clientX - canevas.getBoundingClientRect().left;
+      }
     }else{
       return canevas.width/2;
     }
   }
 
-  var switchMode = function(evt){
+  var switchModeMouse = function(evt){
+    var separationX = calculateSeparationX(0, evt);
+    switchMode(separationX);
+  }
+
+  var switchModeTouch = function(evt){
+    var separationX = calculateSeparationX(1, evt);
+    switchMode(separationX);
+  }
+
+  var switchMode = function(separationX){
     //console.log("switchMode");
     var daltoType = 0;
-    var separationX = calculateSeparationX(evt);
 
     for (let i = 0; i < form.daltoType.length; i++) {
         if(form.daltoType[i].checked){
@@ -161,7 +174,7 @@ function dessiner(img) {
 
   var swtichModeDefault = function(){
     allowDrawing();
-    switchMode(null);
+    switchModeMouse(null);
     disableDrawing();
   }
 
@@ -173,8 +186,8 @@ function dessiner(img) {
   form.addEventListener('change', swtichModeDefault);
   canevas.addEventListener('mousedown', allowDrawing);
   canevas.addEventListener('touchstart', allowDrawing);
-  canevas.addEventListener('mousemove', switchMode);
-  canevas.addEventListener('touchmove', switchMode);
+  canevas.addEventListener('mousemove', switchModeMouse);
+  canevas.addEventListener('touchmove', switchModeTouch);
   canevas.addEventListener('mouseup', disableDrawing);
   canevas.addEventListener('touchend', disableDrawing);
   
@@ -184,6 +197,6 @@ function dessiner(img) {
   
   //Initialisation à 50% de l'image
   allowDrawing();
-  switchMode(null);
+  switchModeMouse(null);
   disableDrawing();
 }
